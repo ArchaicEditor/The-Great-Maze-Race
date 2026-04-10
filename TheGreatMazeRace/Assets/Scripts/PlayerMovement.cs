@@ -6,7 +6,19 @@ public class PlayerMovement : MonoBehaviour
 
     public Rigidbody2D rb;
     private Vector2 movement;
+    private SaveSystem saveSystem;
 
+    [System.Obsolete]
+    public void Start()
+    {
+        PlayerData data = SaveSystem.Instance.LoadPlayer();
+        
+
+        if (data != null)
+        {
+            transform.position = new Vector2(data.posX, data.posY);
+        }
+    }
     void Update()
     {
         // Get input from keyboard (WASD / Arrow Keys)
@@ -21,5 +33,10 @@ public class PlayerMovement : MonoBehaviour
     {
         // Move the player using Rigidbody2D
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
+    }
+
+    public void SaveAtCheckpoint()
+    {
+        SaveSystem.Instance.SavePlayer(transform.position);
     }
 }
