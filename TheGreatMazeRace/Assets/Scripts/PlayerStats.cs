@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using UnityEditor.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -23,6 +24,21 @@ public class PlayerStats : MonoBehaviour
         
 
         NotifyChange();
+    }
+
+    private void Update()
+    {
+        Lose();
+        
+    }
+
+    public void Lose()
+    {
+        if (currentHealth <= 0)
+        {
+            DataManager.Instance.RecordDeath();
+            GameObject.Destroy(this.gameObject);
+        }
     }
 
     public void TakeDamage(float amount)
