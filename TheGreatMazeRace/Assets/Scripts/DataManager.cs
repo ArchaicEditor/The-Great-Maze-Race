@@ -1,5 +1,6 @@
 using UnityEngine;
 using System;
+using System.Collections;
 
 public class DataManager : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class DataManager : MonoBehaviour
     private float sessionStartTime;
     private int deathCount = 0;
     private int itemsCollected = 0;
+
+    
 
     void Awake()
     {
@@ -27,6 +30,8 @@ public class DataManager : MonoBehaviour
     {
         StartSession();
     }
+
+    
 
     void OnApplicationQuit()
     {

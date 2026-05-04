@@ -1,19 +1,31 @@
 using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private Rigidbody2D rb;
-    public PlayerStats stats;
+    [SerializeField] Transform target;
 
+    NavMeshAgent agent;
 
+     void Start()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+    }
 
+     void Update()
+    {
+        agent.SetDestination(target.position);
+    }
 
-    private void OnCollisionStay2D(Collision2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            stats.TakeDamage(10);
+           
             Destroy(gameObject);
         }
     }

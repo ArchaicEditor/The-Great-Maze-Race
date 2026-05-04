@@ -7,7 +7,10 @@ public class PlayerStats : MonoBehaviour
     public PlayerStatsData baseStats;
 
     public float currentHealth;
+
+    public PotionManager healthPotionManager;
     
+
 
     public float Speed { get; private set; }
     
@@ -29,6 +32,17 @@ public class PlayerStats : MonoBehaviour
     private void Update()
     {
         Lose();
+
+        if (healthPotionManager.number > 0 && currentHealth < baseStats.maxHealth)
+        {
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                healthPotionManager.RemovePotions(1);
+                Heal(10);
+            }
+        }
+
+        
         
     }
 

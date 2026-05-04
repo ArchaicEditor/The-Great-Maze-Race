@@ -9,6 +9,7 @@ public class Checkpoint : MonoBehaviour
         {
             player.SaveAtCheckpoint();
             Debug.Log("Checkpoint reached!");
+            gameObject.SetActive(false);
         }
     }
 }
