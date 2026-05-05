@@ -1146,10 +1146,9 @@ GameObject:
   m_Component:
   - component: {fileID: 176472149}
   - component: {fileID: 176472148}
-  - component: {fileID: 176472150}
   - component: {fileID: 176472152}
   - component: {fileID: 176472151}
-  - component: {fileID: 176472153}
+  - component: {fileID: 176472155}
   - component: {fileID: 176472154}
   m_Layer: 0
   m_Name: Game Manager
@@ -1189,18 +1188,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &176472150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176472147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c0d44163bf3434cb10a62395c20315, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SaveSystem
 --- !u!114 &176472151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1229,18 +1216,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PotionManager
   potionText: {fileID: 275568259}
   number: 0
---- !u!114 &176472153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 176472147}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20ddaa10deaba244a9f76fc4d6681a33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DataManager
 --- !u!114 &176472154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1255,6 +1230,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   gameTime: 0
   gameActive: 0
+--- !u!114 &176472155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 176472147}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88a8128f6f7c354e9d23fffa7673e59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MenuButtons
 --- !u!1 &176787360
 GameObject:
   m_ObjectHideFlags: 0
@@ -30632,7 +30619,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 3.5
   m_Acceleration: 5
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -30828,7 +30815,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab: {fileID: 1696310911}
-  spawnInterval: 5
+  spawnInterval: 4.25
 --- !u!1 &1284002808
 GameObject:
   m_ObjectHideFlags: 0
@@ -31067,12 +31054,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295298776}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 106.4902, y: -89.5, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 132.30804, y: -109.87609, z: 0}
   m_LocalScale: {x: 4.5404, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1616744460}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1323706038
 GameObject:
@@ -31156,7 +31143,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1323706041}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 176472155}
+        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1323706041
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -369615,7 +369614,7 @@ GameObject:
   - component: {fileID: 1600532573}
   - component: {fileID: 1600532572}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Body Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -369928,6 +369927,7 @@ Transform:
   - {fileID: 315084805}
   - {fileID: 1370156928}
   - {fileID: 1589823927}
+  - {fileID: 1295298780}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1618837280
@@ -370218,7 +370218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemyPrefab: {fileID: 1941731522}
-  spawnInterval: 2
+  spawnInterval: 2.65
 --- !u!1 &1637632178
 GameObject:
   m_ObjectHideFlags: 0
@@ -370443,7 +370443,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1675913256}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 176472155}
+        m_TargetAssemblyTypeName: MenuButtons, Assembly-CSharp
+        m_MethodName: MainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1675913256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370826,7 +370838,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 2.7
+  m_Speed: 4.7
   m_Acceleration: 6.5
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -371151,8 +371163,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
+  m_Speed: 5.5
+  m_Acceleration: 7
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -371393,6 +371405,64 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1 &2039020863
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2039020865}
+  - component: {fileID: 2039020864}
+  - component: {fileID: 2039020866}
+  m_Layer: 0
+  m_Name: Global Game Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2039020864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039020863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15c0d44163bf3434cb10a62395c20315, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SaveSystem
+  savePath: 
+--- !u!4 &2039020865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039020863}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -7.90804, y: -48.63673, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2039020866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039020863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20ddaa10deaba244a9f76fc4d6681a33, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DataManager
 --- !u!1 &2080443641
 GameObject:
   m_ObjectHideFlags: 0
@@ -371545,4 +371615,4 @@ SceneRoots:
   - {fileID: 456053259}
   - {fileID: 285597051}
   - {fileID: 176472149}
-  - {fileID: 1295298780}
+  - {fileID: 2039020865}

@@ -5,9 +5,9 @@ public class SaveSystem : MonoBehaviour
 {
     public static SaveSystem Instance;
 
-    private string savePath;
+    public string savePath;
 
-    private void Awake()
+    public void Awake()
     {
         // Singleton pattern
         if (Instance != null && Instance != this)
